@@ -17,11 +17,11 @@ function App() {
       <h1 className="title">REACTIVE WEATHER</h1>
       <h3 className="subtitle">Up to the minute weather news</h3>
       <div className="app">
+        <Form location={location} setLocation={setLocation} />
         {cities.map((cities, index) => (
           <WeatherCard cities={cities} key={`cities-${index}`} />
         ))}
         <Location stateSetter={stateSetter} data={cities} location={location} />
-        <Form location={location} setLocation={setLocation} />
       </div>
     </>
   );

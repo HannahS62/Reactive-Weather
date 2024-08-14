@@ -6,24 +6,28 @@ function Form({ location, setLocation }) {
   function handleSubmit(e) {
     e.preventDefault();
     setLocation(typedLocation);
-    typedLocation("");
+    setTypedLocation("");
   }
-
-  <div className="form">
-    <form onSubmit={handleSubmit}>
-      <label className="city">
-        City:
-        <input
-          type="text"
-          value={typedLocation}
-          onChange={(e) => setTypedLocation(e.target.value)}
-        />
-      </label>
-      <button className="btn btn-primary" type="submit">
-        Submit
-      </button>
-    </form>
-  </div>;
+  return (
+    <>
+      <div className="form">
+        <form onSubmit={handleSubmit}>
+          <label className="city">
+            City:
+            <input
+              type="text"
+              value={typedLocation}
+              onChange={(e) => setTypedLocation(e.target.value)}
+            />
+          </label>
+          <button className="btn btn-primary" type="submit">
+            Submit
+          </button>
+        </form>
+      </div>
+      ;
+    </>
+  );
 }
 
 export default Form;
